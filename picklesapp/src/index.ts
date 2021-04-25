@@ -30,8 +30,8 @@ createConnection().then(async connection => {
     student.firstName = "bob";
     student.lastName = "builder";
     student.gender = "male";
-    student.dob = "10-02-1990";
-    await connection.manager.save(user);
+    student.dob = "1990-02-10";
+    await connection.manager.save(student);
     console.log("Saved a new user with id: " + student.id);
 
     console.log("Loading users from the database...");

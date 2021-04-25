@@ -24,6 +24,8 @@ export class  Student {
 	})
   	gender: string;
 
-	@Column()
-        dob: Date;
+	@Column({ 
+		type: 'date'
+	})
+        dob: string;
 }       

@@ -10,13 +10,13 @@ export class  Student {
 	
 		length: 100
 	})
-  	firstname: string;
+  	firstName: string;
   	
   	@Column({
 	
 		length: 100
 	})
-  	lastname: string;
+  	lastName: string;
 
   	@Column({
 	

@@ -25,16 +25,20 @@ import {Student} from "./entity/Student";
 
 createConnection().then(async connection => {
 
-    console.log("Inserting a new user into the database...");
+    console.log("Inserting a new student into the database...");
     const student = new Student();
     student.firstName = "bob";
     student.lastName = "builder";
     student.gender = "male";
     student.dob = "1990-02-10";
-    await connection.manager.save(student);
-    console.log("Saved a new user with id: " + student.id);
 
-    console.log("Loading users from the database...");
+    // change implementation from using entity manager to repository
+    //await connection.manager.save(student);
+    let studentRepository = connection.getRepository(Student);
+    await studentRepository.save(student);
+    console.log("Saved a new student with id: " + student.id);
+
+    console.log("Loading students from the database...");
     const students = await connection.manager.find(Student);
     console.log("Loaded students: ", students);
 
